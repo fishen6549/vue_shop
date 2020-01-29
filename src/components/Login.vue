@@ -96,7 +96,7 @@ export default {
                     '/login',
                     this.loginForm
                 )
-                console.log(res)
+                // console.log(res)
                 if (res.meta.status !== 200) {
                     return this.$message.error('登录失败!')
                 }
