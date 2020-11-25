@@ -3,3 +3,21 @@ html,body,#app {
     margin: 0;
     padding: 0;
 }
+
+.el-breadcrumb {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.el-table {
+    margin-top: 15px;
+    font-size: 12;
+}
+
+.el-table th.gutter{
+    display: table-cell!important;
+}
+
+.el-pagination {
+    margin-top: 15px;
+}

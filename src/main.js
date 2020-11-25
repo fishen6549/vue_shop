@@ -12,7 +12,7 @@ Vue.config.productionTip = false
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 // axios请求拦截 每次请求带上token服务器会验证token
 axios.interceptors.request.use(config => {
-  // console.log(config)
+  console.log(config)
   // console.log(window.sessionStorage.getItem('token'))
   config.headers.Authorization = window.sessionStorage.getItem('token')
   return config
