@@ -42,7 +42,7 @@
           >
             <template slot="title">
               <i :class="iconsObj[item.id]" />
-              <span>{{ item.authName + "-" + item.path }}</span>
+              <span>{{ item.authName }}</span>
             </template>
             <el-menu-item
               v-for="subItem in item.children"
@@ -52,7 +52,7 @@
             >
               <template slot="title">
                 <i class="el-icon-menu" />
-                <span>{{ subItem.authName + "-" + subItem.path }}</span>
+                <span>{{ subItem.authName }}</span>
               </template>
             </el-menu-item>
           </el-submenu>
