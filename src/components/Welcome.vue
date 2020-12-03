@@ -1,9 +1,9 @@
 <template>
-    <div>
+  <div>
 
-        Welcome
+    Welcome
 
-    </div>
+  </div>
 </template>
 
 <script>
