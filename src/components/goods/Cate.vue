@@ -28,7 +28,7 @@
         <!-- 操作 -->
         <template slot="ops" slot-scope="scope">
           <el-button size="mini" type="primary" icon="el-icon-edit">编辑</el-button>
-          <el-button size="mini" type="danger" icon="el-icon-delete">删除</el-button>
+          <el-button size="mini" type="danger" icon="el-icon-delete" @click="deleteCate(scope.row.cat_id)">删除</el-button>
         </template>
       </tree-table>
       <!-- 分页区域 -->
@@ -185,6 +185,23 @@ export default {
       this.selectedKeys = []
       this.addCateForm.cat_level = 0
       this.addCateForm.cat_pid = 0
+    },
+    async deleteCate(id) {
+      const confirmRes = await this.$confirm('此操作将永久删除该分类, 是否继续?', '询问', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).catch(err => err)
+
+      if (confirmRes !== 'confirm') {
+        return this.$message.info('已取消删除')
+      }
+      const { data: res } = await this.$http.delete('categories/' + id)
+      if (res.meta.status !== 200) {
+        return this.$message.error(res.meta.msg)
+      }
+      this.$message.success(res.meta.msg)
+      this.getCateList()
     }
   }
 }
