@@ -25,6 +25,11 @@
         </el-col>
         <el-col :span="4">
           <el-button type="primary" @click="dialogVisible = true"> 添加用户 </el-button>
+
+        </el-col>
+        <el-col :span="4">
+          <el-button type="primary" @click="testRoute"> 路由跳转测试 </el-button>
+
         </el-col>
       </el-row>
       <el-table :data="userList" border stripe>
@@ -303,6 +308,11 @@ export default {
       this.$message.success(res.meta.msg)
       this.getUserList()
       this.setRoleDialogVisible = false
+    },
+    testRoute() {
+      console.log('点击按钮')
+      this.$router.push({ name: 'test', params: { id: 12, name: 'apple' }})
+      // this.$router.push({ path: 'test', query: { id: 12 }})
     }
   }
 }

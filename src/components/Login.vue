@@ -84,7 +84,8 @@ export default {
         this.$message.success('登录成功!')
         // console.log(res.data.token) // 看下token
         window.sessionStorage.setItem('token', res.data.token) // 把token保存起来
-        this.$router.push('/home')
+        // this.$router.push('/users')
+        this.$router.push({ name: 'test', params: { userId: '123' }})
       })
     }
   }
